@@ -1,4 +1,20 @@
-# Fitness Assistant Demo
+# Умный фитнес-ассистент в Yandex Cloud
 
-*Реализация личного фитнес-ассистента на основе [Yandex AI Assistant API](https://yandex.cloud/ru/docs/foundation-models/concepts/assistant/) / [Yandex Cloud ML SDK](https://github.com/yandex-cloud/yandex-cloud-ml-sdk/). Основано на [этом примере](https://github.com/yandex-datasphere/advanced-assistant/).* 
+*Реализация личного фитнес-ассистента на основе Yandex Responses API. Основано на [этом примере](https://github.com/yandex-datasphere/advanced-assistant/).* 
 
+В этом репозитории содержится пример создания интеллектуального ассистента по фитнесу в Yandex Cloud. Мы по шагам рассматриваем следующие понятия:
+
+* Использование языковых моделей в Yandex Cloud на базе Responses API и [OpenAI SDK](https://github.com/openai/openai-python)
+* Простейшие ассистенты для поддержания контекста диалога
+* Понятие [Function Calling](https://yandex.cloud/ru/docs/foundation-models/concepts/yandexgpt/function-call) в генеративных моделях и его использование с ассистентами
+* Подключение текстовой базы знаний (индекса) к модели для реализации RAG
+* Умное чанкование и индексирование таблиц Markdown
+
+## Запуск примера
+
+Для работы с примером рекомендуется:
+* Клонировать репозиторий (на своём ноутбуке или в проекте Yandex Datasphere)
+* Для авторизации в облаке:
+  - Создать сервисный аккаунт, имеющий права `ai.editor`, `serverless.mcpGateways.anonymousInvoker` и `serverless.mcpGateways.invoker`
+  - [ИЛИ] Получить для этого аккаунта ключ авторизации, сохранить его в файл `authorized_key.json` в домашнюю директорию проекта, в этот файл добавить поле `folder_id`
+  - [ИЛИ] Получить для этого аккаунта API-ключ и установить в проекте датасферы секреты `folder_id`, `api_key` (либо установить соответствующие переменные окружения)
